@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Razor_Page.Migrations
+namespace BusinessObjects.Migrations
 {
     /// <inheritdoc />
     public partial class Fix : Migration

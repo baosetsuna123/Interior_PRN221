@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Razor_Page.Models
+namespace BusinessObjects.Models
 {
     [Table("Contract")]
     public class Contract

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Razor_Page.Models;
+using BusinessObjects.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

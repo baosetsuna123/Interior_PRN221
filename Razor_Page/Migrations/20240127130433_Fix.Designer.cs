@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Razor_Page.Models;
+using BusinessObjects.Models;
 
 #nullable disable
 
-namespace Razor_Page.Migrations
+namespace BusinessObjects.Migrations
 {
     [DbContext(typeof(MyDBContext))]
     [Migration("20240127130433_Fix")]

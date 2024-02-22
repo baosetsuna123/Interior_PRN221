@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project_Group_Interior\\Razor_Page\\Razor_Page.csproj": {}
+    "D:\\New folder (2)\\prn221\\Interior_PRN221\\Razor_Page\\Razor_Page.csproj": {}
   },
   "projects": {
-    "D:\\Project_Group_Interior\\Razor_Page\\Razor_Page.csproj": {
+    "D:\\New folder (2)\\prn221\\Interior_PRN221\\Razor_Page\\Razor_Page.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project_Group_Interior\\Razor_Page\\Razor_Page.csproj",
+        "projectUniqueName": "D:\\New folder (2)\\prn221\\Interior_PRN221\\Razor_Page\\Razor_Page.csproj",
         "projectName": "Razor_Page",
-        "projectPath": "D:\\Project_Group_Interior\\Razor_Page\\Razor_Page.csproj",
+        "projectPath": "D:\\New folder (2)\\prn221\\Interior_PRN221\\Razor_Page\\Razor_Page.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Project_Group_Interior\\Razor_Page\\obj\\",
+        "outputPath": "D:\\New folder (2)\\prn221\\Interior_PRN221\\Razor_Page\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

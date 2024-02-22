@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Razor_Page.Models
+namespace BusinessObjects.Models
 {
     [Table("Quotation")]
     public class Quotation
@@ -11,6 +11,7 @@ namespace Razor_Page.Models
 
         public int CustomerID { get; set; }
         public DateTime RequestDate { get; set; }
+        public bool Status { get; set; }
         public double EstimatePrice { get; set; }
         public string? Content { get; set; }
 
