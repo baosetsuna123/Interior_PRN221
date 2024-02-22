@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Razor_Page.Models
+namespace BusinessObjects.Models
 {
     [Table("Customer")]
     public class Customer
@@ -19,7 +19,6 @@ namespace Razor_Page.Models
         public string? Image { get; set; }
 
         public virtual ICollection<Contract>? Contracts { get; set; }
-        public virtual ICollection<Feedback>? Feedbacks { get; set; }
         public virtual ICollection<Quotation>? Quotations { get; set; }
 
 

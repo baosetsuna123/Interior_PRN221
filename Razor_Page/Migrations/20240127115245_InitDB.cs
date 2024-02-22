@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Razor_Page.Migrations
+namespace BusinessObjects.Migrations
 {
     /// <inheritdoc />
     public partial class InitDB : Migration

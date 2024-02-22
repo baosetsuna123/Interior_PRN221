@@ -1,4 +1,4 @@
-﻿namespace Razor_Page.Models
+﻿namespace BusinessObjects.Models
 {
     public class InteriorDetail
     {

@@ -1,16 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Razor_Page.Models
+namespace BusinessObjects.Models
 {
 
     public class MyDBContext : DbContext
     {
-        public MyDBContext(DbContextOptions options) : base(options)
-        { }
+        public MyDBContext(DbContextOptions<MyDBContext> options) : base(options)
+        {
+        }
         #region DbSet
         public DbSet<Contract> Contracts { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<Interior> Interiors { get; set; }
         public DbSet<InteriorDetail> InteriorDetails { get; set; }
         public DbSet<Material> Materials { get; set; }

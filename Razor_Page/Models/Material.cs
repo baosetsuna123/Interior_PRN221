@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Razor_Page.Models
+namespace BusinessObjects.Models
 {
     [Table("Material")]
     public class Material
@@ -11,7 +11,7 @@ namespace Razor_Page.Models
         public string? Name { get; set; }
         public string? Image { get; set; }
 
-        public virtual ICollection<InteriorDetail>? InteriorDetails { get; set;}
+        public virtual ICollection<InteriorDetail>? InteriorDetails { get; set; }
 
 
     }
