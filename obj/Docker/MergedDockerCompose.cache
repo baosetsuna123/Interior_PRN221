@@ -1,0 +1,45 @@
+name: dockercompose3285021088222760017
+services:
+  chc.presentation:
+    build:
+      context: D:\New folder (2)\prn221\Interior_PRN221
+      dockerfile: CHC.Presentation/Dockerfile
+    depends_on:
+      postgres-service:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+    image: chcpresentation
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+  postgres-service:
+    container_name: postgres-chc
+    environment:
+      PGDATA: /data/postgres
+      POSTGRES_DB: chc
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: postgres
+    image: postgres
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5432"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: D:\New folder (2)\prn221\Interior_PRN221\postgres-chc
+        target: /data/postgres
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose3285021088222760017_default

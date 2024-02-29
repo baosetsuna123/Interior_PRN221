@@ -1,0 +1,95 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CHC.Presentation
+build_property.RootNamespace = CHC.Presentation
+build_property.ProjectDir = D:\New folder (2)\prn221\Interior_PRN221\Razor_Page\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\New folder (2)\prn221\Interior_PRN221\Razor_Page
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/AccountView/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFZpZXdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/AccountView/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFZpZXdcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/AccountView/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFZpZXdcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/AccountView/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFZpZXdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/AccountView/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFZpZXdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/SupplierView/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwcGxpZXJWaWV3XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/SupplierView/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwcGxpZXJWaWV3XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/SupplierView/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwcGxpZXJWaWV3XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/SupplierView/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwcGxpZXJWaWV3XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/SupplierView/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VwcGxpZXJWaWV3XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/New folder (2)/prn221/Interior_PRN221/Razor_Page/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-rq5tgkbz8s

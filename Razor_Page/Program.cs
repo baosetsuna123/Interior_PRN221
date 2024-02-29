@@ -1,13 +1,31 @@
-using Microsoft.EntityFrameworkCore;
-using BusinessObjects.Models;
+using Autofac.Core;
+using CHC.Presentation.Configuration;
+using CHC.Presentation.SeedData;
+
 var builder = WebApplication.CreateBuilder(args);
+
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
+
+// Config builder
+builder.ConfigureAutofacContainer();
+
+// Add Configuration
+builder.Configuration.SettingsBinding();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(60);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+builder.Services.AddDbContext();
 
-builder.Configuration.AddJsonFile("appsettings.json");
-
-builder.Services.AddDbContext<MyDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MyDB")));
+//Seed Data
+builder.Services.SeedData().GetAwaiter().GetResult();
 
 var app = builder.Build();
 
@@ -15,13 +33,18 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
 }
-app.UseStaticFiles();
 
+app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapRazorPages();
 
