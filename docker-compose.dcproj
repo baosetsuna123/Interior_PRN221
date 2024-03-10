@@ -4,7 +4,7 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>3cb78b30-e197-4917-8c63-9a6beb5e6de5</ProjectGuid>
+    <ProjectGuid>a7fb1e09-b1f9-4ff0-9ceb-a6e6f015258e</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>chc.presentation</DockerServiceName>

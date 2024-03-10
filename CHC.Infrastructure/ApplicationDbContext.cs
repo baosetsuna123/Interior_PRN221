@@ -17,11 +17,12 @@ namespace CHC.Infrastructure
 
         #region DbSet
         public DbSet<Account> Accounts { get; set; }
-        public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Material> Materials { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<TransactionDetail> TransactionDetails { get; set; }
+        public DbSet<Contract> Contracts { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<Interior> Interiors { get; set; }
+        public DbSet<InteriorDetail> InteriorDetails { get; set; }
+        public DbSet<Quotation> Quotations { get; set; }
         #endregion DbSet
 
         public override int SaveChanges()
@@ -32,7 +33,7 @@ namespace CHC.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseNpgsql("server=localhost;port=5432;database=chc;uid=postgres;password=root;TrustServerCertificate=True");
+                .UseNpgsql("server=db-postgresql-sgp1-25425-do-user-15933004-0.c.db.ondigitalocean.com;port=25060;database=defaultdb;uid=doadmin;password=AVNS_gji6s3Aop8tNMQ0jabg;TrustServerCertificate=True;SslMode=Require;Pooling=false;");
             base.OnConfiguring(optionsBuilder);
         }
 
@@ -46,43 +47,35 @@ namespace CHC.Infrastructure
             #region Entity Relation
 
             modelBuilder.Entity<Account>()
-                .HasMany(p => p.OwnedMaterials)
-                .WithMany(d => d.OwnerAccounts)
-                .UsingEntity(j => j.ToTable("owner_material"));
-
-            modelBuilder.Entity<Material>()
-                .HasOne(p => p.Category)
-                .WithMany(d => d.Materials)
-                .HasForeignKey(p => p.CategoryId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<Material>()
-                .HasOne(p => p.Supplier)
-                .WithMany(d => d.ProvidedMaterials)
-                .HasForeignKey(p => p.SupplierId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<Material>()
-                .HasOne(p => p.SellerAccount)
-                .WithMany(d => d.SellMaterials)
-                .HasForeignKey(p => p.SellerId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<Transaction>()
-                .HasOne(p => p.Customer)
-                .WithMany(d => d.Transactions)
+                .HasMany(p => p.Contracts)
+                .WithOne(d => d.Customer)
                 .HasForeignKey(p => p.CustomerId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<TransactionDetail>()
-                .HasOne(p => p.Transaction)
-                .WithOne(d => d.TransactionDetail)
+            modelBuilder.Entity<Account>()
+                .HasMany(p => p.Feedbacks)
+                .WithOne(d => d.Customer)
+                .HasForeignKey(p => p.CustomerId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<TransactionDetail>()
+            modelBuilder.Entity<Account>()
+                .HasMany(p => p.Quotations)
+                .WithOne(d => d.Customer)
+                .HasForeignKey(p => p.CustomerId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Quotation>()
+                .HasMany(p => p.Interiors)
+                .WithMany(d => d.Quotations)
+                .UsingEntity(j => j.ToTable("quotation_detail"));
+
+            modelBuilder.Entity<Interior>()
                 .HasMany(p => p.Materials)
-                .WithMany(d => d.TransactionDetails)
-                .UsingEntity(j => j.ToTable("transactiondetail_material"));
+                .WithMany(d => d.Interiors)
+                .UsingEntity<InteriorDetail>(
+                    l => l.HasOne<Material>(e => e.Material).WithMany(e => e.InteriorDetails),
+                    l => l.HasOne<Interior>(e => e.Interior).WithMany(e => e.InteriorDetails)
+                );
 
             #endregion
         }
