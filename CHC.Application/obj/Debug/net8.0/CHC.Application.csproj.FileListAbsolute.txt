@@ -1,0 +1,16 @@
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\bin\Debug\net8.0\CHC.Application.deps.json
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\bin\Debug\net8.0\CHC.Application.dll
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\bin\Debug\net8.0\CHC.Application.pdb
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\bin\Debug\net8.0\CHC.Domain.dll
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\bin\Debug\net8.0\CHC.Domain.pdb
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\obj\Debug\net8.0\CHC.Application.csproj.AssemblyReference.cache
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\obj\Debug\net8.0\CHC.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\obj\Debug\net8.0\CHC.Application.AssemblyInfoInputs.cache
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\obj\Debug\net8.0\CHC.Application.AssemblyInfo.cs
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\obj\Debug\net8.0\CHC.Application.csproj.CoreCompileInputs.cache
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\obj\Debug\net8.0\CHC.Application.sourcelink.json
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\obj\Debug\net8.0\CHC.Appl.0217CDEE.Up2Date
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\obj\Debug\net8.0\CHC.Application.dll
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\obj\Debug\net8.0\refint\CHC.Application.dll
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\obj\Debug\net8.0\CHC.Application.pdb
+E:\FPT\PRN221_B10\GroupProject\Code\CHC.Application\obj\Debug\net8.0\ref\CHC.Application.dll

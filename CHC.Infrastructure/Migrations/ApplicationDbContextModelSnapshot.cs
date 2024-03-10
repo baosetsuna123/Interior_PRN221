@@ -23,21 +23,6 @@ namespace CHC.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("AccountMaterial", b =>
-                {
-                    b.Property<Guid>("OwnedMaterialsId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("OwnerAccountsId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("OwnedMaterialsId", "OwnerAccountsId");
-
-                    b.HasIndex("OwnerAccountsId");
-
-                    b.ToTable("owner_material", "chc");
-                });
-
             modelBuilder.Entity("CHC.Domain.Entities.Account", b =>
                 {
                     b.Property<Guid>("Id")
@@ -70,6 +55,12 @@ namespace CHC.Infrastructure.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("character varying(500)")
                         .HasColumnName("fullname");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)")
+                        .HasColumnName("image_url");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean")
@@ -112,180 +103,22 @@ namespace CHC.Infrastructure.Migrations
                     b.ToTable("account", "chc");
                 });
 
-            modelBuilder.Entity("CHC.Domain.Entities.Category", b =>
+            modelBuilder.Entity("CHC.Domain.Entities.Contract", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime>("AgreementDate")
                         .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
+                        .HasColumnName("agreement_date");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("text")
-                        .HasColumnName("created_by");
-
-                    b.Property<string>("Description")
+                    b.Property<string>("Content")
                         .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("character varying(1000)")
-                        .HasColumnName("description");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_deleted");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("name");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_at");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("text")
-                        .HasColumnName("updated_by");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("category", "chc");
-                });
-
-            modelBuilder.Entity("CHC.Domain.Entities.Material", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("category_id");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("text")
-                        .HasColumnName("created_by");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("description");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_deleted");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("name");
-
-                    b.Property<Guid>("OwnerId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("owner_id");
-
-                    b.Property<string>("Price")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("price");
-
-                    b.Property<Guid>("SellerId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("seller_id");
-
-                    b.Property<string>("Size")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("size");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("integer")
-                        .HasColumnName("status");
-
-                    b.Property<Guid>("SupplierId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("supplier_id");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("type");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_at");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("text")
-                        .HasColumnName("updated_by");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("SellerId");
-
-                    b.HasIndex("SupplierId");
-
-                    b.ToTable("material", "chc");
-                });
-
-            modelBuilder.Entity("CHC.Domain.Entities.Supplier", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("text")
-                        .HasColumnName("created_by");
-
-                    b.Property<int>("FoundedYear")
-                        .HasColumnType("integer")
-                        .HasColumnName("founded_year");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_deleted");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)")
-                        .HasColumnName("name");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_at");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("text")
-                        .HasColumnName("updated_by");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("supplier", "chc");
-                });
-
-            modelBuilder.Entity("CHC.Domain.Entities.Transaction", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)")
+                        .HasColumnName("content");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone")
@@ -299,19 +132,18 @@ namespace CHC.Infrastructure.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("customer_id");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("description");
+                    b.Property<double>("FinalOffer")
+                        .HasMaxLength(500)
+                        .HasColumnType("double precision")
+                        .HasColumnName("final_offer");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean")
                         .HasColumnName("is_deleted");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("name");
+                    b.Property<int>("Status")
+                        .HasColumnType("integer")
+                        .HasColumnName("status");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
@@ -325,10 +157,53 @@ namespace CHC.Infrastructure.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("transaction", "chc");
+                    b.ToTable("contract", "chc");
                 });
 
-            modelBuilder.Entity("CHC.Domain.Entities.TransactionDetail", b =>
+            modelBuilder.Entity("CHC.Domain.Entities.Feedback", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("content");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text")
+                        .HasColumnName("created_by");
+
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("customer_id");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_deleted");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("text")
+                        .HasColumnName("updated_by");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("feedback", "chc");
+                });
+
+            modelBuilder.Entity("CHC.Domain.Entities.Interior", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -352,18 +227,19 @@ namespace CHC.Infrastructure.Migrations
                         .HasColumnType("boolean")
                         .HasColumnName("is_deleted");
 
-                    b.Property<Guid>("MaterialId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("material_id");
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("location");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("name");
 
-                    b.Property<Guid>("TransactionId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("transaction_id");
+                    b.Property<double>("TotalPrice")
+                        .HasColumnType("double precision")
+                        .HasColumnName("total_price");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
@@ -375,73 +251,151 @@ namespace CHC.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TransactionId")
-                        .IsUnique();
-
-                    b.ToTable("transaction_detail", "chc");
+                    b.ToTable("interior", "chc");
                 });
 
-            modelBuilder.Entity("MaterialTransactionDetail", b =>
+            modelBuilder.Entity("CHC.Domain.Entities.InteriorDetail", b =>
                 {
-                    b.Property<Guid>("MaterialsId")
-                        .HasColumnType("uuid");
+                    b.Property<Guid>("InteriorId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("interior_id");
 
-                    b.Property<Guid>("TransactionDetailsId")
-                        .HasColumnType("uuid");
+                    b.Property<Guid>("MaterialId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("material_id");
 
-                    b.HasKey("MaterialsId", "TransactionDetailsId");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer")
+                        .HasColumnName("quantity");
 
-                    b.HasIndex("TransactionDetailsId");
+                    b.HasKey("InteriorId", "MaterialId");
 
-                    b.ToTable("transactiondetail_material", "chc");
-                });
+                    b.HasIndex("MaterialId");
 
-            modelBuilder.Entity("AccountMaterial", b =>
-                {
-                    b.HasOne("CHC.Domain.Entities.Material", null)
-                        .WithMany()
-                        .HasForeignKey("OwnedMaterialsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CHC.Domain.Entities.Account", null)
-                        .WithMany()
-                        .HasForeignKey("OwnerAccountsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.ToTable("interior_detail", "chc");
                 });
 
             modelBuilder.Entity("CHC.Domain.Entities.Material", b =>
                 {
-                    b.HasOne("CHC.Domain.Entities.Category", "Category")
-                        .WithMany("Materials")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
 
-                    b.HasOne("CHC.Domain.Entities.Account", "SellerAccount")
-                        .WithMany("SellMaterials")
-                        .HasForeignKey("SellerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
 
-                    b.HasOne("CHC.Domain.Entities.Supplier", "Supplier")
-                        .WithMany("ProvidedMaterials")
-                        .HasForeignKey("SupplierId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text")
+                        .HasColumnName("created_by");
 
-                    b.Navigation("Category");
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("image_url");
 
-                    b.Navigation("SellerAccount");
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_deleted");
 
-                    b.Navigation("Supplier");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("name");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("double precision")
+                        .HasColumnName("price");
+
+                    b.Property<int>("Tag")
+                        .HasColumnType("integer")
+                        .HasColumnName("tag");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("text")
+                        .HasColumnName("updated_by");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("material", "chc");
                 });
 
-            modelBuilder.Entity("CHC.Domain.Entities.Transaction", b =>
+            modelBuilder.Entity("CHC.Domain.Entities.Quotation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)")
+                        .HasColumnName("content");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text")
+                        .HasColumnName("created_by");
+
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("customer_id");
+
+                    b.Property<double>("EstimatePrice")
+                        .HasColumnType("double precision")
+                        .HasColumnName("estimate_price");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_deleted");
+
+                    b.Property<DateTime>("RequestDate")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("request_date");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("text")
+                        .HasColumnName("updated_by");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("quotation", "chc");
+                });
+
+            modelBuilder.Entity("InteriorQuotation", b =>
+                {
+                    b.Property<Guid>("InteriorsId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("QuotationsId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("InteriorsId", "QuotationsId");
+
+                    b.HasIndex("QuotationsId");
+
+                    b.ToTable("quotation_detail", "chc");
+                });
+
+            modelBuilder.Entity("CHC.Domain.Entities.Contract", b =>
                 {
                     b.HasOne("CHC.Domain.Entities.Account", "Customer")
-                        .WithMany("Transactions")
+                        .WithMany("Contracts")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -449,53 +403,79 @@ namespace CHC.Infrastructure.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("CHC.Domain.Entities.TransactionDetail", b =>
+            modelBuilder.Entity("CHC.Domain.Entities.Feedback", b =>
                 {
-                    b.HasOne("CHC.Domain.Entities.Transaction", "Transaction")
-                        .WithOne("TransactionDetail")
-                        .HasForeignKey("CHC.Domain.Entities.TransactionDetail", "TransactionId")
+                    b.HasOne("CHC.Domain.Entities.Account", "Customer")
+                        .WithMany("Feedbacks")
+                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Transaction");
+                    b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("MaterialTransactionDetail", b =>
+            modelBuilder.Entity("CHC.Domain.Entities.InteriorDetail", b =>
                 {
-                    b.HasOne("CHC.Domain.Entities.Material", null)
-                        .WithMany()
-                        .HasForeignKey("MaterialsId")
+                    b.HasOne("CHC.Domain.Entities.Interior", "Interior")
+                        .WithMany("InteriorDetails")
+                        .HasForeignKey("InteriorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CHC.Domain.Entities.TransactionDetail", null)
+                    b.HasOne("CHC.Domain.Entities.Material", "Material")
+                        .WithMany("InteriorDetails")
+                        .HasForeignKey("MaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Interior");
+
+                    b.Navigation("Material");
+                });
+
+            modelBuilder.Entity("CHC.Domain.Entities.Quotation", b =>
+                {
+                    b.HasOne("CHC.Domain.Entities.Account", "Customer")
+                        .WithMany("Quotations")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("InteriorQuotation", b =>
+                {
+                    b.HasOne("CHC.Domain.Entities.Interior", null)
                         .WithMany()
-                        .HasForeignKey("TransactionDetailsId")
+                        .HasForeignKey("InteriorsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CHC.Domain.Entities.Quotation", null)
+                        .WithMany()
+                        .HasForeignKey("QuotationsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
             modelBuilder.Entity("CHC.Domain.Entities.Account", b =>
                 {
-                    b.Navigation("SellMaterials");
+                    b.Navigation("Contracts");
 
-                    b.Navigation("Transactions");
+                    b.Navigation("Feedbacks");
+
+                    b.Navigation("Quotations");
                 });
 
-            modelBuilder.Entity("CHC.Domain.Entities.Category", b =>
+            modelBuilder.Entity("CHC.Domain.Entities.Interior", b =>
                 {
-                    b.Navigation("Materials");
+                    b.Navigation("InteriorDetails");
                 });
 
-            modelBuilder.Entity("CHC.Domain.Entities.Supplier", b =>
+            modelBuilder.Entity("CHC.Domain.Entities.Material", b =>
                 {
-                    b.Navigation("ProvidedMaterials");
-                });
-
-            modelBuilder.Entity("CHC.Domain.Entities.Transaction", b =>
-                {
-                    b.Navigation("TransactionDetail")
-                        .IsRequired();
+                    b.Navigation("InteriorDetails");
                 });
 #pragma warning restore 612, 618
         }
