@@ -19,10 +19,18 @@ namespace CHC.Domain.Entities
 
         [Column("total_price")]
         public double TotalPrice { get; set; } = 0;
+        [Column("image_url")]
+        public string ImageUrl { get; set; } = string.Empty;
 
+        [Column("staff_id")]
+        [ForeignKey("Staff")]
+        public Guid StaffId { get; set; } 
+        public virtual Account Staff { get; set; } = null!;
         public virtual ICollection<InteriorDetail> InteriorDetails { get; set; } = new List<InteriorDetail>();
         public virtual ICollection<Material> Materials { get; set; } = new List<Material>();
         public virtual ICollection<Quotation> Quotations { get; set; } = new List<Quotation>();
+        public virtual ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();
+
 
     }
 }

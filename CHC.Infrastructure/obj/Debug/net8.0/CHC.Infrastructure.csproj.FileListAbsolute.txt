@@ -18,3 +18,23 @@ E:\FPT\PRN221_B10\GroupProject\Code\CHC.Infrastructure\obj\Debug\net8.0\refint\C
 E:\FPT\PRN221_B10\GroupProject\Code\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.pdb
 E:\FPT\PRN221_B10\GroupProject\Code\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.genruntimeconfig.cache
 E:\FPT\PRN221_B10\GroupProject\Code\CHC.Infrastructure\obj\Debug\net8.0\ref\CHC.Infrastructure.dll
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\bin\Debug\net8.0\CHC.Infrastructure.deps.json
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\bin\Debug\net8.0\CHC.Infrastructure.runtimeconfig.json
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\bin\Debug\net8.0\CHC.Infrastructure.dll
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\bin\Debug\net8.0\CHC.Infrastructure.pdb
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\bin\Debug\net8.0\CHC.Application.dll
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\bin\Debug\net8.0\CHC.Domain.dll
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\bin\Debug\net8.0\CHC.Application.pdb
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\bin\Debug\net8.0\CHC.Domain.pdb
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.csproj.AssemblyReference.cache
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.AssemblyInfoInputs.cache
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.AssemblyInfo.cs
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.csproj.CoreCompileInputs.cache
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.sourcelink.json
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.csproj.CopyComplete
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.dll
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\refint\CHC.Infrastructure.dll
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.pdb
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.genruntimeconfig.cache
+D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\ref\CHC.Infrastructure.dll

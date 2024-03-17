@@ -1,8 +1,10 @@
 ﻿using CHC.Domain.Dtos.Material;
+using CHC.Domain.Entities;
 using CHC.Domain.Pagination;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,11 +12,7 @@ namespace CHC.Application.Service
 {
     public interface IMaterialService
     {
-        Task<List<MaterialDto>> GetAll();
-        Task<IPaginate<MaterialDto>> GetMaterials();
-        Task<MaterialDto> Get(Guid id);
-        Task<MaterialDto> Create(CreateMaterialRequest createMaterial);
-        //Task<bool> Update(UpdateMaterialRequest updateMaterial);
-        Task<bool> Delete(Guid id);
+        public Task<List<MaterialDto>> GetAll();
+        public Task<MaterialViewModel> GetOneByCondition(Expression<Func<Material, bool>> predicate);
     }
 }
