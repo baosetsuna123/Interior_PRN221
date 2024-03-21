@@ -6264,19 +6264,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {}
+    "C:\\Users\\admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Infrastructure\\CHC.Infrastructure.csproj",
+      "projectUniqueName": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Infrastructure\\CHC.Infrastructure.csproj",
       "projectName": "CHC.Infrastructure",
-      "projectPath": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Infrastructure\\CHC.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Infrastructure\\obj\\",
+      "projectPath": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Infrastructure\\CHC.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6290,11 +6290,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj"
+            "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj": {
+              "projectPath": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj"
             },
-            "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj"
+            "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj": {
+              "projectPath": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj"
             }
           }
         }
@@ -6374,7 +6374,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

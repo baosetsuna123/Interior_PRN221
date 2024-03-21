@@ -5,60 +5,101 @@ using CHC.Domain.Entities;
 using CHC.Domain.Pagination;
 using MapsterMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Printing;
+using System.Linq.Expressions;
 
 namespace CHC.Infrastructure.Service
 {
-    public class QuotaionService : BaseService<IQuotationService>, IQuotationService
+    public class QuotationService : BaseService<QuotationService>, IQuotationService
     {
-        public QuotaionService(IUnitOfWork<ApplicationDbContext> unitOfWork, ILogger<IQuotationService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public QuotationService(IUnitOfWork<ApplicationDbContext> unitOfWork, ILogger<QuotationService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
 
-        public async Task<QuotationDto> Create(CreateQuotationRequest createQuotation)
+        public async Task<QuotationDto> Create(CreateQuotaionRequest createQuotaionRequest)
         {
-            Quotation quotation = _mapper.Map<Quotation>(createQuotation);
+            Quotation existedQuotation = await _unitOfWork.GetRepository<Quotation>()
+                .SingleOrDefaultAsync(
+                    predicate: x => x.CustomerId.Equals(createQuotaionRequest.CustomerId) && x.InteriorId.Equals(createQuotaionRequest.InteriorId)
+                );
+            if (existedQuotation is not null) return null!;
 
+            Quotation quotation = _mapper.Map<Quotation>(createQuotaionRequest);
             await _unitOfWork.GetRepository<Quotation>().InsertAsync(quotation);
-            bool isSuccessfull = await _unitOfWork.CommitAsync() > 0;
-            if (!isSuccessfull) return null!;
+            await _unitOfWork.CommitAsync();
             return _mapper.Map<QuotationDto>(quotation);
         }
 
         public async Task<bool> Delete(Guid id)
         {
-            Quotation quotation = _mapper.Map<Quotation>(await Get(id));
-            if (quotation == null) return false;
-
+            Quotation quotation = await _unitOfWork.GetRepository<Quotation>().SingleOrDefaultAsync(predicate: x => x.Id.Equals(id));
             _unitOfWork.GetRepository<Quotation>().DeleteAsync(quotation);
             return await _unitOfWork.CommitAsync() > 0;
         }
 
         public async Task<QuotationDto> Get(Guid id)
         {
-            Quotation quotation = await _unitOfWork.GetRepository<Quotation>().SingleOrDefaultAsync(predicate: p => p.Id.Equals(id));
+            Quotation quotation = (await _unitOfWork.GetRepository<Quotation>()
+                 .SingleOrDefaultAsync(
+                     predicate: x => x.Id.Equals(id),
+                     include: x => x.Include(x => x.Customer)
+                                     .Include(x => x.Interior).ThenInclude(x => x.InteriorDetails).ThenInclude(x => x.Material)
+                 ));
             return _mapper.Map<QuotationDto>(quotation);
         }
 
-        public async Task<List<QuotationDto>> GetAll()
+        public async Task<IList<QuotationDto>> GetAll(Expression<Func<Quotation, bool>> predicate)
         {
-            ICollection<Quotation> quotations = await _unitOfWork.GetRepository<Quotation>().GetListAsync();
-            return _mapper.Map<List<QuotationDto>>(quotations);
+            IList<Quotation> quotations = (await _unitOfWork.GetRepository<Quotation>()
+                .GetListAsync(
+                    predicate: predicate,
+                    orderBy: x => x.OrderByDescending(x => x.CreatedAt),
+                    include: x => x.Include(x => x.Customer)
+                                    .Include(x => x.Interior).ThenInclude(x => x.InteriorDetails).ThenInclude(x => x.Material)
+                )).ToList();
+            return _mapper.Map<IList<QuotationDto>>(quotations);
         }
 
-        public Task<IPaginate<QuotationDto>> GetQuotations()
+        public Task<QuotationDto> GetByCondition(Expression<Func<Quotation, bool>> predicate)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IPaginate<QuotationDto>> Paginate(string? search, int page, int pageSize)
+        public async Task<IPaginate<QuotationDto>> GetPagination(Expression<Func<Quotation, bool>> predicate, int page, int pageSize)
         {
-            throw new NotImplementedException();
+            IPaginate<Quotation> quotations = await _unitOfWork.GetRepository<Quotation>()
+                .GetPagingListAsync(
+                    predicate: predicate,
+                    page: page,
+                    size: pageSize,
+                    orderBy: x => x.OrderByDescending(x => x.CreatedAt),
+                    include: x => x.Include(x => x.Customer)
+                                    .Include(x => x.Interior).ThenInclude(x => x.InteriorDetails).ThenInclude(x => x.Material)
+                );
+            return _mapper.Map<IPaginate<QuotationDto>>(quotations);
+        }
+
+        public async Task<bool> Update(UpdateQuotationRequest updateQuotationRequest)
+        {
+            Quotation quotation = await _unitOfWork.GetRepository<Quotation>()
+                .SingleOrDefaultAsync(
+                    predicate: x => x.Id.Equals(updateQuotationRequest.Id),
+                    include: x => x.Include(x => x.Customer)
+                                        .Include(x => x.Interior).ThenInclude(x => x.InteriorDetails).ThenInclude(x => x.Material));
+
+            quotation.EstimatePrice = updateQuotationRequest.EstimatePrice;
+            quotation.Content = updateQuotationRequest.Content;
+            quotation.ShippingCost = updateQuotationRequest.ShippingCost;
+            quotation.ConstructionCost = updateQuotationRequest.ConstructionCost;
+            quotation.CustomerId = updateQuotationRequest.CustomerId;
+            quotation.InteriorId = updateQuotationRequest.InteriorId;
+            quotation.Status = updateQuotationRequest.Status;
+
+            _unitOfWork.GetRepository<Quotation>().UpdateAsync(quotation);
+            return await _unitOfWork.CommitAsync() > 0;
         }
     }
 }
