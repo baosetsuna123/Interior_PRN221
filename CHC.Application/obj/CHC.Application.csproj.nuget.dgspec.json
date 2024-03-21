@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj": {}
+    "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj": {}
   },
   "projects": {
-    "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj": {
+    "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj",
         "projectName": "CHC.Application",
-        "projectPath": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Application\\obj\\",
+        "projectPath": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Application\\CHC.Application.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj": {
-                "projectPath": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj"
+              "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj": {
+                "projectPath": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj"
               }
             }
           }
@@ -85,21 +85,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj": {
+    "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj",
         "projectName": "CHC.Domain",
-        "projectPath": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\New folder (2)\\prn221-w10\\Interior_PRN221\\CHC.Domain\\obj\\",
+        "projectPath": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Domain\\CHC.Domain.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LENOVO\\Desktop\\Interior_PRN221\\CHC.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -164,7 +164,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
