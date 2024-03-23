@@ -13,18 +13,3 @@ E:\FPT\PRN221_B10\GroupProject\Code\CHC.Domain\obj\Debug\net8.0\refint\CHC.Domai
 E:\FPT\PRN221_B10\GroupProject\Code\CHC.Domain\obj\Debug\net8.0\CHC.Domain.pdb
 E:\FPT\PRN221_B10\GroupProject\Code\CHC.Domain\obj\Debug\net8.0\CHC.Domain.genruntimeconfig.cache
 E:\FPT\PRN221_B10\GroupProject\Code\CHC.Domain\obj\Debug\net8.0\ref\CHC.Domain.dll
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\bin\Debug\net8.0\CHC.Domain.deps.json
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\bin\Debug\net8.0\CHC.Domain.runtimeconfig.json
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\bin\Debug\net8.0\CHC.Domain.dll
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\bin\Debug\net8.0\CHC.Domain.pdb
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.csproj.AssemblyReference.cache
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.GeneratedMSBuildEditorConfig.editorconfig
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.AssemblyInfoInputs.cache
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.AssemblyInfo.cs
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.csproj.CoreCompileInputs.cache
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.sourcelink.json
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.dll
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\refint\CHC.Domain.dll
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.pdb
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.genruntimeconfig.cache
-D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\ref\CHC.Domain.dll
