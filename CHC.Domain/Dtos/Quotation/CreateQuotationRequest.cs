@@ -10,5 +10,6 @@ namespace CHC.Domain.Dtos.Quotation
         public double ConstructionCost { get; set; } = 0;
         public Guid CustomerId { get; set; }
         public Guid InteriorId { get; set; }
+        public DateOnly RequestDate { get; set; }
     }
 }
