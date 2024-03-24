@@ -16,7 +16,7 @@ namespace CHC.Application.Service
         Task<IList<QuotationDto>> GetAll(Expression<Func<Quotation, bool>> predicate);
         Task<QuotationDto> Get(Guid id);
         Task<QuotationDto> GetByCondition(Expression<Func<Quotation, bool>> predicate);
-        Task<QuotationDto> Create(CreateQuotaionRequest createQuotaionRequest);
+        Task<QuotationDto> Create(CreateQuotationRequest createQuotaionRequest);
         Task<bool> Update(UpdateQuotationRequest updateQuotationRequest);
         Task<bool> Delete(Guid id);
     }

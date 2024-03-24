@@ -19,7 +19,7 @@ namespace CHC.Infrastructure.Service
         {
         }
 
-        public async Task<QuotationDto> Create(CreateQuotaionRequest createQuotaionRequest)
+        public async Task<QuotationDto> Create(CreateQuotationRequest createQuotaionRequest)
         {
             Quotation existedQuotation = await _unitOfWork.GetRepository<Quotation>()
                 .SingleOrDefaultAsync(
