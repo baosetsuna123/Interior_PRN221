@@ -13,6 +13,7 @@ E:\FPT\PRN221_B10\GroupProject\Code\CHC.Domain\obj\Debug\net8.0\refint\CHC.Domai
 E:\FPT\PRN221_B10\GroupProject\Code\CHC.Domain\obj\Debug\net8.0\CHC.Domain.pdb
 E:\FPT\PRN221_B10\GroupProject\Code\CHC.Domain\obj\Debug\net8.0\CHC.Domain.genruntimeconfig.cache
 E:\FPT\PRN221_B10\GroupProject\Code\CHC.Domain\obj\Debug\net8.0\ref\CHC.Domain.dll
+<<<<<<< HEAD
 D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\bin\Debug\net8.0\CHC.Domain.deps.json
 D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\bin\Debug\net8.0\CHC.Domain.runtimeconfig.json
 D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\bin\Debug\net8.0\CHC.Domain.dll
@@ -43,3 +44,5 @@ C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\refint\CHC.D
 C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.pdb
 C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.genruntimeconfig.cache
 C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\ref\CHC.Domain.dll
+=======
+>>>>>>> 0744736102620da52d7556eea9038ec49a6899d1

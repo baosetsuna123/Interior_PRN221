@@ -17,9 +17,22 @@ namespace CHC.Infrastructure.Service
         {
         }
 
-        public Task<bool> Delete(Guid id)
+        public async Task<InteriorDto> Create(CreateInteriorRequest createInteriorRequest)
         {
-            throw new NotImplementedException();
+            Interior interior = _mapper.Map<Interior>(createInteriorRequest);
+            await _unitOfWork.GetRepository<Interior>().InsertAsync(interior);
+            bool isSuccessfull = await _unitOfWork.CommitAsync() > 0;
+            if (!isSuccessfull) return null!;
+            return _mapper.Map<InteriorDto>(interior);
+        }
+
+        public async Task<bool> Delete(Guid id)
+        {
+            Interior interior = await _unitOfWork.GetRepository<Interior>().SingleOrDefaultAsync(predicate: x => x.Id.Equals(id));
+            if (interior is null) return false;
+            interior.IsDeleted = true;
+            _unitOfWork.GetRepository<Interior>().UpdateAsync(interior);
+            return await _unitOfWork.CommitAsync() > 0;
         }
 
         public async Task<InteriorDto> Get(Guid id)
@@ -27,16 +40,24 @@ namespace CHC.Infrastructure.Service
             Interior interior = await _unitOfWork.GetRepository<Interior>()
                 .SingleOrDefaultAsync(
                 predicate: x => x.Id.Equals(id),
-                include: x => x.Include(x => x.InteriorDetails)
+                include: x => x.Include(x => x.Staff)
+                                .Include(x => x.InteriorDetails)
                                 .ThenInclude(x => x.Material)
                                 .Include(x => x.Quotations)
                 );
             return _mapper.Map<InteriorDto>(interior);
         }
 
-        public Task<List<InteriorDto>> GetAll()
+        public async Task<List<InteriorDto>> GetAll(Expression<Func<Interior, bool>> predicate)
         {
-            throw new NotImplementedException();
+            List<Interior> interiors = (await _unitOfWork.GetRepository<Interior>()
+                .GetListAsync(
+                predicate: predicate,
+                include: x => x.Include(x => x.Staff)
+                                .Include(x => x.InteriorDetails)
+                                .ThenInclude(x => x.Material)
+                                .Include(x => x.Quotations))).ToList();
+            return _mapper.Map<List<InteriorDto>>(interiors);
         }
 
         public Task<InteriorDto> GetByCondition(Expression<Func<Interior, bool>> predicate)
@@ -44,17 +65,26 @@ namespace CHC.Infrastructure.Service
             throw new NotImplementedException();
         }
 
-        public async Task<IPaginate<InteriorDto>> GetPagination(string? search, int page, int pageSize)
+        public async Task<IPaginate<InteriorDto>> GetPagination(Expression<Func<Interior, bool>> predicate, int page, int pageSize)
         {
             var interiors = await _unitOfWork.GetRepository<Interior>().GetPagingListAsync(
-                predicate: x => x.Name.Contains(search!) || x.Description.Contains(search!),
+                predicate: predicate,
                 page: page,
                 size: pageSize,
-                include: x => x.Include(x => x.InteriorDetails)
+                orderBy: x => x.OrderByDescending(x => x.CreatedAt),
+                include: x => x.Include(x => x.Staff)
+                                .Include(x => x.InteriorDetails)
                                 .ThenInclude(x => x.Material)
                                 .Include(x => x.Quotations)
                 );
             return _mapper.Map<IPaginate<InteriorDto>>(interiors);
+        }
+
+        public async Task<bool> Update(UpdateInteriorRequest updateInteriorRequest)
+        {
+            Interior interior = _mapper.Map<Interior>(updateInteriorRequest);
+            _unitOfWork.GetRepository<Interior>().UpdateAsync(interior);
+            return await _unitOfWork.CommitAsync() > 0;
         }
     }
 }
