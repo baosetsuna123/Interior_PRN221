@@ -13,6 +13,7 @@ using CHC.Domain.Dtos;
 using CHC.Domain.Enums;
 using CHC.Infrastructure.Service;
 using CHC.Presentation.Extensions;
+using System.Linq.Expressions;
 
 namespace CHC.Presentation.Pages.QuotationView
 {
@@ -38,7 +39,10 @@ namespace CHC.Presentation.Pages.QuotationView
                 _httpContextAccessor.HttpContext.Session.Clear();
                 Response.Redirect("/Login");
             }
-            Quotation = await _quotationService.GetAll();
+            Expression<Func<Quotation, bool>> predicate = string.IsNullOrEmpty("")
+                ? x => true
+                : x => x.Content.Contains("");
+            Quotation = await _quotationService.GetAll(predicate);
             return Page();
         }
     }

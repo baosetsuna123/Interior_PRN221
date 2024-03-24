@@ -1,8 +1,10 @@
 using CHC.Application.Service;
 using CHC.Domain.Dtos.Interior;
+using CHC.Domain.Entities;
 using CHC.Domain.Pagination;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Linq.Expressions;
 
 namespace CHC.Presentation.Pages.InteriorView
 {
@@ -31,9 +33,12 @@ namespace CHC.Presentation.Pages.InteriorView
         {
             if (pageIndex is not null) PageIndex = pageIndex.Value;
             if (size is not null) PageSize = size.Value;
-            if (searchString is not null) SearchString = searchString;
-
-            IPaginate<InteriorDto> interiors = await interiorService.GetPagination(SearchString, PageIndex, PageSize);
+            if (searchString is null)
+                SearchString = string.Empty;
+            Expression<Func<Interior, bool>> predicate = string.IsNullOrEmpty(searchString)
+                                                            ? x => true
+                                                            : x => x.Name.Contains(searchString);
+            IPaginate<InteriorDto> interiors = await interiorService.GetPagination(predicate, PageIndex, PageSize);
 
             Interiors = interiors.Items;
             TotalPages = interiors.TotalPages;
@@ -42,7 +47,10 @@ namespace CHC.Presentation.Pages.InteriorView
 
         public async Task<IActionResult> OnPostSearchAsync(string? search = "")
         {
-            IPaginate<InteriorDto> interiors = await interiorService.GetPagination(search, PageIndex, PageSize);
+            Expression<Func<Interior, bool>> predicate = string.IsNullOrEmpty(search)
+                                                            ? x => true
+                                                            : x => x.Name.Contains(search);
+            IPaginate<InteriorDto> interiors = await interiorService.GetPagination(predicate, PageIndex, PageSize);
             Interiors = interiors.Items;
             TotalPages = interiors.TotalPages;
             return Page();
