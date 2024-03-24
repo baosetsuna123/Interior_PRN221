@@ -28,3 +28,18 @@ D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\refint\
 D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.pdb
 D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.genruntimeconfig.cache
 D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\ref\CHC.Domain.dll
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\bin\Debug\net8.0\CHC.Domain.deps.json
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\bin\Debug\net8.0\CHC.Domain.runtimeconfig.json
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\bin\Debug\net8.0\CHC.Domain.dll
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\bin\Debug\net8.0\CHC.Domain.pdb
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.AssemblyInfo.cs
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.sourcelink.json
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.dll
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\refint\CHC.Domain.dll
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.pdb
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\CHC.Domain.genruntimeconfig.cache
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Domain\obj\Debug\net8.0\ref\CHC.Domain.dll

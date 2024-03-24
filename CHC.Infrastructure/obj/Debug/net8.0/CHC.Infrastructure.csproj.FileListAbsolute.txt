@@ -38,3 +38,9 @@ D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0
 D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.pdb
 D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.genruntimeconfig.cache
 D:\New folder (2)\prn221-w10\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\ref\CHC.Infrastructure.dll
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.AssemblyInfo.cs
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\Interior_PRN221\CHC.Infrastructure\obj\Debug\net8.0\CHC.Infrastructure.sourcelink.json

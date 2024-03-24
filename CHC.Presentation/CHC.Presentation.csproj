@@ -10,6 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\ContractView\**" />
+    <Content Remove="Pages\ContractView\**" />
+    <EmbeddedResource Remove="Pages\ContractView\**" />
+    <None Remove="Pages\ContractView\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac" Version="8.0.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="FontAwesome" Version="4.7.0" />
@@ -26,10 +33,6 @@
     <ProjectReference Include="..\CHC.Application\CHC.Application.csproj" />
     <ProjectReference Include="..\CHC.Domain\CHC.Domain.csproj" />
     <ProjectReference Include="..\CHC.Infrastructure\CHC.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\ContractView\" />
   </ItemGroup>
 
   <ItemGroup>
