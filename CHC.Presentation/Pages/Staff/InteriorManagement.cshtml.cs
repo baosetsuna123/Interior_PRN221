@@ -34,9 +34,8 @@ namespace CHC.Presentation.Pages.Staff
 		[BindProperty]
 		public string StaffId { get; set; }
 
-		public async Task<IActionResult> OnGetAsync(string staffId, string? searchString, int? pageIndex, int? size)
+		public async Task<IActionResult> OnGetAsync(string? searchString, int? pageIndex, int? size)
         {
-            if (staffId == null) return Page();
 
 			SessionUser current = httpContextAccessor.HttpContext!.Session.GetObject<SessionUser>("CurrentUser");
 			if (current == null || current.Role == RoleType.Customer)
@@ -50,12 +49,14 @@ namespace CHC.Presentation.Pages.Staff
 			if (searchString is not null) SearchString = searchString;
 
 			IPaginate<InteriorDto> interior = await interiorService
-				.GetPagination(x => x.StaffId.Equals(new Guid(staffId)) && x.Name.Contains(SearchString) && x.IsDeleted.Equals(false), PageIndex, PageSize);
+				.GetPagination(x => x.StaffId.Equals(current.Id)
+								&& x.Name.Contains(SearchString)
+								&& x.IsDeleted.Equals(false), PageIndex, PageSize);
 
 			Interiors = interior.Items;
             TotalPages = interior.TotalPages;
 
-			StaffId = staffId;
+			StaffId = current.Id.ToString();
 
 			return Page();
         }
